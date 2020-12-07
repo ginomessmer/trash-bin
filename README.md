@@ -11,4 +11,26 @@ An experimental custom uploader for ShareX based on Azure Functions.
 - [x] File
 
 ### Deploy
-TODO
+TODO - but should work just like any other Azure Function deployment (it's not rocket science).
+
+### Uploader Configuration
+Import this snippet into your ShareX custom upload destinations list. Make sure to replace the placeholders.
+```json
+{
+  "Version": "13.3.0",
+  "Name": "Azure Functions Trash Bin",
+  "DestinationType": "ImageUploader, TextUploader, FileUploader, URLShortener",
+  "RequestMethod": "POST",
+  "RequestURL": "<YOUR_AZURE_FUNCTION_ENDPOINT>.azurewebsites.net/api/upload",
+  "Parameters": {
+    "code": "<AZURE_FUNCTION_SECRET_KEY>"
+  },
+  "Body": "MultipartFormData",
+  "Arguments": {
+    "input": "$input$",
+    "filename": "$filename$"
+  },
+  "FileFormName": "blob",
+  "URL": "$header:Location$"
+}
+```
