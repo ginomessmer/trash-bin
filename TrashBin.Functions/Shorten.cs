@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Cosmos.Table;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.Azure.Cosmos.Table;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
+using TrashBin.Entities;
 
 namespace TrashBin.Functions
 {

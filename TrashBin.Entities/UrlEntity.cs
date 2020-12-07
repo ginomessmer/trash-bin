@@ -1,7 +1,7 @@
-using System;
 using Microsoft.Azure.Cosmos.Table;
+using System;
 
-namespace TrashBin.Functions
+namespace TrashBin.Entities
 {
     public class UrlEntity : TableEntity
     {

@@ -1,4 +1,4 @@
-namespace TrashBin.Functions
+namespace TrashBin.Entities
 {
     public static class TrashDefaults
     {
