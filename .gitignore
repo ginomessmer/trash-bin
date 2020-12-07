@@ -338,3 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/TrashBin.Functions/Properties/ServiceDependencies/trashbin - Zip Deploy/profile.arm.json

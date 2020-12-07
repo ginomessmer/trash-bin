@@ -6,9 +6,9 @@ An experimental custom uploader for ShareX based on Azure Functions.
 
 ### Supports
 - [x] URL shortener
-- [ ] Image
-- [ ] Text
-- [ ] File
+- [x] Image
+- [x] Text
+- [x] File
 
 ### Deploy
 TODO

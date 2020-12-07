@@ -8,7 +8,7 @@ namespace TrashBin.Functions
 {
     public static class Redirect
     {
-        [FunctionName("Redirect")]
+        [FunctionName(nameof(Redirect))]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "go/{id}")]
             HttpRequest req,
