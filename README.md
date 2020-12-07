@@ -1,8 +1,7 @@
 # Trash Bin Server(less) for ShareX
 An experimental custom uploader for [ShareX](https://getsharex.com/) based on Azure Functions.
 
-> :warning: **Not finished yet by all means.  
-> This is just an experimental project and the current state serves as a POC because I didn't have enough spare time yet.**
+> :warning: **Work in Progress**
 
 ### Supports
 - [x] URL shortener
