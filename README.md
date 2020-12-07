@@ -34,3 +34,8 @@ Import this snippet into your ShareX custom upload destinations list. Make sure 
   "URL": "$header:Location$"
 }
 ```
+
+### Useful?
+[Let me know](https://twitter.com/ginomessmer) and if you feel generous, feel free to [buy me a coffee](buymeacoffee.com/ginomessmer).  
+<a href="https://www.buymeacoffee.com/ginomessmer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="40px" ></a>
+
