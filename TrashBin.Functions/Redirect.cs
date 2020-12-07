@@ -10,15 +10,8 @@ namespace TrashBin.Functions
     {
         [FunctionName(nameof(Redirect))]
         public static IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "go/{id}")]
-            HttpRequest req,
-            [Table(TrashDefaults.UploadsTableName, TrashDefaults.UrlPartitionKey, "{id}")]
-            UrlEntity entity)
-        {
-            if (entity is null)
-                return new NotFoundResult();
-
-            return new RedirectResult(entity.Url);
-        }
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "go/{id}")] HttpRequest req,
+            [Table(TrashDefaults.UploadsTableName, TrashDefaults.UrlPartitionKey, "{id}")] UrlEntity entity) => 
+                entity is null ? (IActionResult) new NotFoundResult() : new RedirectResult(entity.Url);
     }
 }

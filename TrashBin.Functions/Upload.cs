@@ -37,6 +37,8 @@ namespace TrashBin.Functions
             await table.CreateIfNotExistsAsync();
             var form = await req.ReadFormAsync();
 
+            // TODO: await IActionResult and return at the end
+            
             if (form.TryGetValue("input", out var inputValue))
             {
                 if (Uri.TryCreate(inputValue, UriKind.Absolute, out var uri))
@@ -71,6 +73,7 @@ namespace TrashBin.Functions
             await using var stream = file.OpenReadStream();
             var contentType = MimeTypes.GetMimeType(file.FileName);
 
+            // TODO: Refactor and consolidate with UploadTextAsync();
             blob.Properties.ContentType = contentType;
             await blob.UploadFromStreamAsync(stream);
             return new CreatedResult(blob.Uri, new { blob.Uri, blob.Properties.ContentType });
@@ -80,6 +83,7 @@ namespace TrashBin.Functions
         {
             var entity = new UrlEntity(uri.ToString());
 
+            // TODO: Extract to helper class
             var output = await _binder.BindAsync<IAsyncCollector<UrlEntity>>(new Attribute[]
             {
                 new StorageAccountAttribute("AzureWebJobsStorage"),
@@ -96,6 +100,7 @@ namespace TrashBin.Functions
                 throw;
             }
 
+            // TODO: Extract to utility class
             return new CreatedResult($"{_request.Scheme}://{_request.Host}/api/go/{entity.RowKey}", entity);
         }
     }
